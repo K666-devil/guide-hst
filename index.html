@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไกด์ตัวละคร Honkai: Star Rail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&family=Kablammo&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg">
+
+   
+
+
+    <style>
+        body {
+            font-family: "Chakra Petch", sans-serif;
+            background-color: #1e1e2f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1e1e2f;
+            color: #f3b236;
+            padding: 10px 20px;
+            font-family: "Kablammo", cursive;
+            font-size: 2rem;
+        }
+
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .character-card {
+            width: 30%;
+            background-color: #29293d;
+            border-radius: 10px;
+            padding: 10px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .character-card:hover {
+            background-color: #3a3a5a;
+        }
+
+        .character-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .character-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .character-card a {
+            text-decoration: none;
+            color: #f3b236;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-bar input {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .character-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>HoYo Guides</div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="ค้นหาชื่อตัวละคร..." onkeyup="searchCharacter()">
+        </div>
+    </header>
+
+    <nav class="menu" id="characterMenu">
+        <div class="character-card">
+            <a href="archeron.html">
+                <img src="arc.webp" alt="Archeron" loading="lazy">
+                <span>Archeron</span>
+            </a>
+        </div>
+
+        <div class="character-card">
+            <a href="firefly.html">
+                <img src="Firefly_.webp" alt="Firefly" loading="lazy">
+                <span>Firefly</span>
+            </a>
+        </div>
+
+        <div class="character-card">
+            <a href="robin.html">
+                <img src="Robin.webp" alt="Robin" loading="lazy">
+                <span>Robin</span>
+            </a>
+        </div>
+
+        <div class="character-card">
+            <a href="feixiao.html">
+                <img src="_Feixiao.webp" alt="Feixiao" loading="lazy">
+                <span>Feixiao</span>
+            </a>
+        </div>
+
+        <div class="character-card">
+            <a href="ruanmei.html">
+                <img src="ruanmei.webp" alt="Ruanmei" loading="lazy">
+                <span>Ruanmei</span>
+            </a>
+        </div>
+
+        <div class="character-card">
+            <a href="Trailblazer.html">
+            <img src="_Trailblazer_.webp" alt="Trailblazer Harmony" loading="lazy">
+            <span>Trailblazer Harmony</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        function searchCharacter() {
+            const input = document.getElementById('searchInput').value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.character-card');
+
+            let found = false;
+
+            cards.forEach(card => {
+                const characterName = card.querySelector('a span').textContent.toLowerCase();
+                if (characterName.includes(input)) {
+                    card.style.display = 'block';
+                    found = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+
+            if (!found) {
+                alert('ไม่พบตัวละครที่ตรงกับการค้นหา');
+            }
+        }
+    </script>
+    <a href="aboutme.html" title="About Me" style="margin-left: 20px; color: #ffffff;">
+        ABOUT ME
+    </a>
+</body>
+<footer class="footer">
+    <div class="wave-container">
+        <svg class="wave wave1" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 20 Q30 30 60 20 T120 20 V30 H0 Z" />
+        </svg>
+        <svg class="wave wave2" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 15 Q30 25 60 15 T120 15 V30 H0 Z" />
+        </svg>
+        <svg class="wave wave3" viewBox="0 0 120 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 10 Q30 20 60 10 T120 10 V30 H0 Z" />
+        </svg>
+    </div>
+ 
+    <p>©CopyRight 2024 | All rights reserved.</p>
+</footer>
+
+
+
+</html>

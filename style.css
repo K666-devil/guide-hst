@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IM+Fell+English:ital@0;1&display=swap');
+
+body {
+  .im-fell-english-regular {
+    font-family: "IM Fell English", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body .chakra-petch-light {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Reset พื้นฐาน */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e2f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* เนื้อหาหลัก */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer {
+  position: relative;
+  background-color: #2e2d31;
+  overflow: hidden;
+  height: 100px;
+  /* ความสูงของฟุตเตอร์ */
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  /* เพิ่มระยะห่างจากเนื้อหาหลักที่นี่ */
+}
+
+
+
+
+.wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* การจัดการเลเยอร์ของคลื่น */
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 150px;
+  fill: rgba(255, 255, 255, 0.3);
+  animation: wave-animation 10s infinite ease-in-out;
+  /* เปลี่ยนเป็น ease-in-out */
+}
+
+/* คลื่นเลเยอร์ที่ 1 */
+.wave1 {
+  top: 0;
+  opacity: 0.5;
+  animation-duration: 12s;
+}
+
+/* คลื่นเลเยอร์ที่ 2 */
+.wave2 {
+  top: 20px;
+  opacity: 0.7;
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+
+/* คลื่นเลเยอร์ที่ 3 */
+.wave3 {
+  top: 40px;
+  opacity: 0.9;
+  animation-duration: 6s;
+  animation-delay: -4s;
+}
+
+/* การเคลื่อนไหวของคลื่น */
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.footer p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+}
